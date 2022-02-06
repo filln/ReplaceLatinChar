@@ -1,0 +1,44 @@
+﻿<Window x:Class="ReplaceLatinChar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReplaceLatinChar"
+        mc:Ignorable="d"
+        Title="Замена латинских символов на кириллические" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="Black"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="ReplaceButton" 
+                Grid.Row="0" 
+                Width="100" MinWidth="100" MaxWidth="100" Height="30" MinHeight="30" MaxHeight="30"
+                Content="Заменить" HorizontalAlignment="Center" Margin="10,0,0,0" Click="ReplaceButton_Click"        
+            ></Button>
+        <Label Content="Скопируйте или введите исходный текст в это поле:" Grid.Row="1" Background="Black" Foreground="#FFC19D21" />
+        <ScrollViewer x:Name="InputTextScrollViewer" Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="InputTextBox" 
+                 Background ="#FF060029" Foreground="WhiteSmoke" FontSize="18"
+                 TextWrapping="Wrap" UndoLimit="1" AcceptsReturn="True"                 
+                 ></TextBox>
+        </ScrollViewer>
+
+        <Label Content="После нажатия [Заменить] измененный текст будет в этом поле:" Grid.Row="3" Background="Black" Foreground="#FFC19D21" />
+        <ScrollViewer x:Name="OutputTextScrollViewer" Grid.Row="4" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="OutputTextBox" 
+                 Background ="#FF060029" Foreground="WhiteSmoke" FontSize="18"
+                 TextWrapping="Wrap" UndoLimit="1" IsReadOnly="True" IsUndoEnabled="False"
+                 ></TextBox>
+        </ScrollViewer>
+
+        <Label x:Name="stateLabel" Content="" Grid.Row="5" Background="Black" Foreground="#FFC19D21" />
+
+    </Grid>
+</Window>
